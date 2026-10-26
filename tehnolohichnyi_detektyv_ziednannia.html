@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Технологічний детектив — З’єднання деталей</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:#20304a;background:linear-gradient(135deg,#edf4ff,#fff7e9)}
+main{max-width:900px;margin:auto;padding:20px 14px 36px}header,.panel,#result{background:white;border-radius:18px;padding:20px;box-shadow:0 5px 20px #20304a12}
+header{text-align:center}h1{margin:8px 0;font-size:clamp(1.7rem,5vw,2.5rem)}p{line-height:1.5}.tag{display:inline-block;background:#fff0bf;border-radius:30px;padding:8px 14px;font-weight:bold}
+.hint{background:#e3edff;padding:14px 18px;border-radius:14px;margin:16px 0;line-height:1.5}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.row{display:flex;align-items:center;gap:10px;border:2px solid #dce5f4;border-radius:12px;padding:10px;margin:9px 0;background:#fff;min-height:55px}.num{display:grid;place-items:center;flex:0 0 29px;height:29px;border-radius:50%;background:#edf3ff;font-weight:bold}
+select{width:100%;min-width:0;padding:10px;border:2px solid #c6d4ed;border-radius:9px;font-size:1rem;color:#20304a;background:white}
+.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:18px 0}button{border:0;border-radius:11px;padding:12px 17px;font-size:1rem;font-weight:bold;cursor:pointer}.check{background:#4169a8;color:white}.reset{background:#e4eaf2;color:#20304a}
+#result{text-align:center;min-height:55px;line-height:1.5;font-weight:bold}.good{color:#18794e}.bad{color:#b42318}.note{text-align:center}
+@media(max-width:640px){.grid{grid-template-columns:1fr}main{padding:12px}}
+</style></head><body><main>
+<header><span class="tag">🕵️ Інтерактивна місія</span><h1>Технологічний детектив</h1><p><strong>§ 8. З’єднання деталей виробу</strong></p><p>Допоможи майстрам підібрати правильний спосіб з’єднання для кожного матеріалу!</p></header>
+<div class="hint"><strong>Як грати?</strong><br>Для кожної ситуації обери спосіб з’єднання зі списку. Натисни <strong>«Перевірити відповіді»</strong>. За кожну правильну пару — 1 бал. Мета — набрати 6 із 6!</div>
+<div class="grid">
+<section class="panel"><h2>🧵 Що потрібно з’єднати?</h2>
+<div class="row"><span class="num">1</span>Дві деталі тканини</div>
+<div class="row"><span class="num">2</span>Паперові деталі листівки</div>
+<div class="row"><span class="num">3</span>Дві дерев’яні деталі</div>
+<div class="row"><span class="num">4</span>Дві металеві пластини</div>
+<div class="row"><span class="num">5</span>Деталі, які потрібно з’єднати тимчасово</div>
+<div class="row"><span class="num">6</span>Край тканини, щоб він не розпускався</div></section>
+<section class="panel"><h2>🛠️ Обери спосіб з’єднання</h2>
+<div class="row"><span class="num">1</span><select id="a1" aria-label="Для тканини"><option value="">— Обери відповідь —</option><option value="glue">Склеювання</option><option value="sew">Зшивання нитками</option><option value="weld">Зварювання</option><option value="nail">Цвяхи або шурупи</option><option value="temp">Липучка або кнопки</option><option value="edge">Підгинання та прошивання краю</option></select></div>
+<div class="row"><span class="num">2</span><select id="a2" aria-label="Для паперу"><option value="">— Обери відповідь —</option><option value="glue">Склеювання</option><option value="sew">Зшивання нитками</option><option value="weld">Зварювання</option><option value="nail">Цвяхи або шурупи</option><option value="temp">Липучка або кнопки</option><option value="edge">Підгинання та прошивання краю</option></select></div>
+<div class="row"><span class="num">3</span><select id="a3" aria-label="Для дерева"><option value="">— Обери відповідь —</option><option value="glue">Склеювання</option><option value="sew">Зшивання нитками</option><option value="weld">Зварювання</option><option value="nail">Цвяхи або шурупи</option><option value="temp">Липучка або кнопки</option><option value="edge">Підгинання та прошивання краю</option></select></div>
+<div class="row"><span class="num">4</span><select id="a4" aria-label="Для металу"><option value="">— Обери відповідь —</option><option value="glue">Склеювання</option><option value="sew">Зшивання нитками</option><option value="weld">Зварювання</option><option value="nail">Цвяхи або шурупи</option><option value="temp">Липучка або кнопки</option><option value="edge">Підгинання та прошивання краю</option></select></div>
+<div class="row"><span class="num">5</span><select id="a5" aria-label="Тимчасове з’єднання"><option value="">— Обери відповідь —</option><option value="glue">Склеювання</option><option value="sew">Зшивання нитками</option><option value="weld">Зварювання</option><option value="nail">Цвяхи або шурупи</option><option value="temp">Липучка або кнопки</option><option value="edge">Підгинання та прошивання краю</option></select></div>
+<div class="row"><span class="num">6</span><select id="a6" aria-label="Обробка краю тканини"><option value="">— Обери відповідь —</option><option value="glue">Склеювання</option><option value="sew">Зшивання нитками</option><option value="weld">Зварювання</option><option value="nail">Цвяхи або шурупи</option><option value="temp">Липучка або кнопки</option><option value="edge">Підгинання та прошивання краю</option></select></div></section></div>
+<div class="actions"><button class="check" onclick="checkAnswers()">✅ Перевірити відповіді</button><button class="reset" onclick="resetQuiz()">↻ Почати спочатку</button></div>
+<div id="result" role="status" aria-live="polite">Обери спосіб з’єднання для всіх шести ситуацій!</div>
+<p class="note">💡 Підказка: спосіб з’єднання залежить від матеріалу та призначення виробу. Успіхів у місії!</p>
+</main>
+<script>
+const answers={a1:"sew",a2:"glue",a3:"nail",a4:"weld",a5:"temp",a6:"edge"};
+function checkAnswers(){let score=0,empty=0;for(const [id,ans] of Object.entries(answers)){let e=document.getElementById(id);if(!e.value)empty++;if(e.value===ans){score++;e.style.borderColor="#198754"}else{e.style.borderColor=e.value?"#c0392b":"#c6d4ed"}}
+let r=document.getElementById("result");if(empty){r.className="bad";r.innerHTML=`Ще потрібно відповісти на ${empty} запитань. Поточний результат: ${score}/6.`}else if(score===6){r.className="good";r.innerHTML="🎉 Чудово! Усі пари правильні — 6/6. Ти справжній технологічний детектив!"}else{r.className=score>=4?"good":"bad";r.innerHTML=`Твій результат: ${score}/6. Зеленим позначено правильні відповіді, червоним — ті, які варто переглянути. Спробуй ще раз!`}}
+function resetQuiz(){for(const id of Object.keys(answers)){let e=document.getElementById(id);e.value="";e.style.borderColor="#c6d4ed"}let r=document.getElementById("result");r.className="";r.textContent="Обери спосіб з’єднання для всіх шести ситуацій!"}
+</script></body></html>
